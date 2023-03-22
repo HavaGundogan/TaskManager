@@ -10,10 +10,10 @@
 
     <View
         android:id="@+id/loginview"
-        android:layout_width="154dp"
-        android:layout_height="164dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="350dp"
+        android:layout_width="128dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="240dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/oval_daire2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,22 +25,24 @@
 
     <View
         android:id="@+id/loginview2"
-        android:layout_width="154dp"
-        android:layout_height="164dp"
-        android:layout_marginEnd="200dp"
-        android:layout_marginBottom="200dp"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="240dp"
         android:background="@drawable/oval_daire3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.508"
         tools:ignore="MissingConstraints"
         tools:srcCompat="@tools:sample/avatars" />
 
     <View
         android:id="@+id/oval_container"
         android:layout_width="250dp"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:layout_marginTop="240dp"
         android:background="@drawable/background_white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/textNameLogin"
+        android:id="@+id/textEmailLogin"
         android:layout_width="218dp"
         android:layout_height="31dp"
         android:layout_marginBottom="20dp"
@@ -69,6 +71,7 @@
         android:layout_marginBottom="300dp"
         android:backgroundTint="#f3b06a"
         android:hapticFeedbackEnabled="false"
+        android:onClick="loginButtonOnclick"
         android:text="Login"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,21 +83,23 @@
         android:id="@+id/textViewPasswordLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="145dp"
         android:text="PASSWORD"
         app:layout_constraintBottom_toTopOf="@+id/textPasswordLogin"
         app:layout_constraintEnd_toEndOf="@+id/textPasswordLogin"
         app:layout_constraintStart_toStartOf="@+id/textPasswordLogin"
-        app:layout_constraintTop_toBottomOf="@+id/textNameLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/textEmailLogin" />
 
     <TextView
         android:id="@+id/textViewNameLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="253dp"
-        android:text="NAME"
-        app:layout_constraintBottom_toTopOf="@+id/textNameLogin"
-        app:layout_constraintEnd_toEndOf="@+id/textNameLogin"
-        app:layout_constraintStart_toStartOf="@+id/textNameLogin"
+        android:layout_marginEnd="175dp"
+        android:text="E-MAİL"
+        app:layout_constraintBottom_toTopOf="@+id/textEmailLogin"
+        app:layout_constraintEnd_toEndOf="@+id/textEmailLogin"
+        app:layout_constraintStart_toStartOf="@+id/textEmailLogin"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -114,6 +119,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Forgot Password?"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
@@ -124,6 +130,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Signup!"
         app:layout_constraintBottom_toBottomOf="@+id/oval_container"
         app:layout_constraintEnd_toEndOf="@+id/buttonLogin"

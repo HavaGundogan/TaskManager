@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "230014638594",
+    "project_id": "task-manager-57741",
+    "storage_bucket": "task-manager-57741.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230014638594:android:f6803d6e8c06cf6379a51b",
+        "android_client_info": {
+          "package_name": "com.gundogan.taskmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230014638594-513bplukm0uc29odfk43vn4q1oa323ke.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvUcvOlTRvm0YtKSw4HoG7Zro79LHVCa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230014638594-513bplukm0uc29odfk43vn4q1oa323ke.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
