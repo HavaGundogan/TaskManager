@@ -1,4 +1,4 @@
-package com.gundogan.taskmanager;
+package com.gundogan.taskmanager.ui.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 

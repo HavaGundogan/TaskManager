@@ -1,4 +1,4 @@
-package com.gundogan.taskmanager;
+package com.gundogan.taskmanager.ui.view;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.gundogan.taskmanager.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.textPasswordLogin);
 
         mAuth = FirebaseAuth.getInstance();
+
     }
 
     public void login(View view) {
@@ -52,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Kullanıcı giriş yaptı, yapılacak işlemler
                             Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
