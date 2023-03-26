@@ -42,7 +42,7 @@
     <View
         android:id="@+id/oval_container"
         android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_height="300dp"
         android:layout_marginTop="240dp"
         android:background="@drawable/background_white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,21 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewNameLogin" />
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="218dp"
-        android:layout_height="0dp"
 
-        android:layout_marginBottom="300dp"
-        android:backgroundTint="#f3b06a"
-        android:hapticFeedbackEnabled="false"
-        android:onClick="loginButtonOnclick"
-        android:text="Login"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPasswordLogin" />
 
     <TextView
         android:id="@+id/textViewPasswordLogin"
@@ -115,11 +101,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPasswordLogin" />
 
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="218dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="250dp"
+        android:backgroundTint="#f3b06a"
+        android:hapticFeedbackEnabled="false"
+        android:onClick="login"
+        android:text="Login"
+        android:visibility="visible"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPasswordLogin" />
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:onClick="forgetPasswordOnc"
         android:text="Forgot Password?"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
@@ -131,6 +135,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:onClick="SignupOnc"
         android:text="Signup!"
         app:layout_constraintBottom_toBottomOf="@+id/oval_container"
         app:layout_constraintEnd_toEndOf="@+id/buttonLogin"

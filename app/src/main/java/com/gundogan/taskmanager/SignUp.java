@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -66,40 +67,40 @@ public class SignUp extends AppCompatActivity {
         });
 
 
-
     }
-   private void pickBirthDate() {
-       // Şimdiki tarihi alın
-       final Calendar currentDate = Calendar.getInstance();
-       int year = currentDate.get(Calendar.YEAR);
-       int month = currentDate.get(Calendar.MONTH);
-       int day = currentDate.get(Calendar.DAY_OF_MONTH);
 
-       // DatePickerDialog oluşturun
-       DatePickerDialog datePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-           @Override
-           public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-               // Seçilen tarihi alın
-               Calendar selectedDate = Calendar.getInstance();
-               selectedDate.set(year, monthOfYear, dayOfMonth);
+    private void pickBirthDate() {
+        // Şimdiki tarihi alın
+        final Calendar currentDate = Calendar.getInstance();
+        int year = currentDate.get(Calendar.YEAR);
+        int month = currentDate.get(Calendar.MONTH);
+        int day = currentDate.get(Calendar.DAY_OF_MONTH);
 
-               // Seçilen tarihi EditText'e yazdırın
-               EditText birthDateEditText = findViewById(R.id.birthDateEditText);
-               SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-               birthDateEditText.setText(dateFormat.format(selectedDate.getTime()));
+        // DatePickerDialog oluşturun
+        DatePickerDialog datePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                // Seçilen tarihi alın
+                Calendar selectedDate = Calendar.getInstance();
+                selectedDate.set(year, monthOfYear, dayOfMonth);
+
+                // Seçilen tarihi EditText'e yazdırın
+                EditText birthDateEditText = findViewById(R.id.birthDateEditText);
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                birthDateEditText.setText(dateFormat.format(selectedDate.getTime()));
               /* // Veritabanına tarihi ekle
                Date birthDate = selectedDate.getTime();
                addToDatabase(birthDate);*/
-           }
+            }
 
-       }, year, month, day);
+        }, year, month, day);
 
-       // DatePickerDialog'un maksimum tarihini ayarlayın (şimdiki tarih)
-       datePicker.getDatePicker().setMaxDate(currentDate.getTimeInMillis());
+        // DatePickerDialog'un maksimum tarihini ayarlayın (şimdiki tarih)
+        datePicker.getDatePicker().setMaxDate(currentDate.getTimeInMillis());
 
-       // DatePickerDialog'u gösterin
-       datePicker.show();
-   }
+        // DatePickerDialog'u gösterin
+        datePicker.show();
+    }
 
     private void signup(String name, String email, String password, String dob) {
 
@@ -114,14 +115,16 @@ public class SignUp extends AppCompatActivity {
                         userMap.put("dob", dob);
 
 
-
-// Add a new document with a generated ID
+                        // Add a new document with a generated ID
                         db.collection("users")
                                 .add(userMap)
                                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                     @Override
                                     public void onSuccess(DocumentReference documentReference) {
                                         Toast.makeText(SignUp.this, "Kayıt işlemi başarılı oldu", Toast.LENGTH_SHORT).show();
+                                        Intent MainActivity = new Intent(SignUp.this, MainActivity.class);
+                                        startActivity(MainActivity);
+
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
@@ -130,7 +133,7 @@ public class SignUp extends AppCompatActivity {
                                         Toast.makeText(SignUp.this, "Kayıt işlemi başarısız oldu", Toast.LENGTH_SHORT).show();
                                     }
                                 });
-                        /*String userId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+                            /*String userId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
 
                             db.collection("users").document(userId)
                                     .set(userMap)
