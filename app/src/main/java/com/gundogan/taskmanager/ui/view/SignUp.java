@@ -117,7 +117,7 @@ public class SignUp extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(DocumentReference documentReference) {
                                         Toast.makeText(SignUp.this, "Kayıt işlemi başarılı oldu", Toast.LENGTH_SHORT).show();
-                                        Intent MainActivity = new Intent(SignUp.this, MainActivity.class);
+                                        Intent MainActivity = new Intent(SignUp.this, HomePageActivity.class);
                                         startActivity(MainActivity);
 
                                     }

@@ -12,6 +12,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.gundogan.taskmanager.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -27,9 +28,23 @@ public class LoginActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.textEmailLogin);
         passwordEditText = findViewById(R.id.textPasswordLogin);
 
+
         mAuth = FirebaseAuth.getInstance();
 
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        //burada bir hata var kontrol et!
+        if (user != null) {
+
+            Intent intent = new Intent(LoginActivity.this,HomePageActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+
+        }
+
+
     }
+
 
     public void login(View view) {
         String email = emailEditText.getText().toString().trim();
@@ -53,6 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Kullanıcı giriş yaptı, yapılacak işlemler
+
                             Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
                             startActivity(intent);
@@ -64,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
-    public void SignupOnc(View view){
+   public void SignupOnc(View view){
         Intent intent = new Intent(LoginActivity.this, SignUp.class);
         startActivity(intent);
         finish();
